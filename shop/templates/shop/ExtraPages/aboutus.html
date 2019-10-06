@@ -1,0 +1,77 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block title %}
+    {% if category %}{{ category.name }}{% else %}Products{% endif %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="row my-3">
+    <div class="col-lg-12" style="border-radius:0 50px; background-color: #DCC7AA">
+        <b><h1 class="text-center py-1" style="font-size:40pt; color:white; font-family: 'Times New Roman', Times, serif; letter-spacing: 5px;">About Us</h1></b>
+
+    </div>
+<!--    <div class="col-lg-3 col-md-4 my-3 hidden-sm" style="padding:20px">-->
+<!--        <center>-->
+
+<!--        <img src="{% static 'shop/slider/logo.png' %}"  alt="Los Angeles" height="100px" >-->
+
+<!--        <h1>About Us</h1>-->
+<!--        </center>-->
+<!--    </div>-->
+<!--    <div class="col-lg-9 col-md-8">-->
+<!--        <img src="{% static 'shop/slider/aboutPic1.png' %}" class="img-fluid" alt="Responsive image" />-->
+<!--    </div>-->
+
+</div>
+<div class="row">
+    <b> <p> A better way to shop online for furniture, home décor and so much more!</p> </b>
+
+    <p>The Furniture Shop is more than just an online furniture store. We hand pick and curate the best in quality and style for you and your home.</p>
+
+    <p>Why spend days driving from store to store trying to find that perfect look or unique piece. Find everything you're looking for and more from the comfort of your own home.</p>
+
+</div>
+<div class="row">
+    <b><p>Why Shop at The Furniture Shop ?</p></b>
+</div>
+<div class="row my-3">
+    <div class="col-lg-3 col-md-3" style="text-align:center;">
+        <font style="font-size:700%; color:#b08725;"><i class="zmdi zmdi-account-circle"></i></font>
+    </div>
+    <div class="col-lg-9 col-md-9">
+        <h4>SERVICE</h4>
+        <p>You're not alone. From browsing, to ordering, to delivery... we're here to help you every step of the way. Our Customer Care Team can answer any questions you may have, as well as provide personalized assistance with: scheduling, availability, bulk orders, custom orders and delivery options. </p>
+        <p>Plus we're a proudly Canadian company! All prices are in CAD currency and you won't see any surprise duty or exchange fees at checkout.</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-3 col-md-3" style="text-align:center;">
+        <font style="font-size:700%; color:#b08725;"><i class="zmdi zmdi-shopping-cart"></i></font>
+    </div>
+    <div class="col-lg-9 col-md-9 py-4">
+        <h4>SELECTION</h4>
+        <p>Shop our extensive selection of quality furniture and home decor for every room, plus a vast assortment of mattresses, appliances and electronics at prices that can't be beat! Find everything you're looking for from the comfort of your home.</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-3 col-md-3" style="text-align:center;">
+        <font style="font-size:700%; color:#b08725;"><i class="zmdi zmdi-mood"></i></font>
+    </div>
+    <div class="col-lg-9 col-md-9 py-5">
+        <h4>SATISFACTION</h4>
+        <p>Shop with confidence! Our Satisfaction Guarantee and Price Match Promise ensure you are always happy with your purchase.</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-3 col-md-3" style="text-align:center;">
+        <font style="font-size:700%; color:#b08725;"><i class="zmdi zmdi-truck"></i></font>
+    </div>
+    <div class="col-lg-9 col-md-9 py-4">
+        <h4>DELIVERY</h4>
+        <p>Our One Of A Kind Delivery network is fast, reliable and FREE on thousands of items. Delivery is free on all purchases over $799, plus all items in the FCA COLLECTION including many home decor items qualify for FREE DELIVERY.</p>
+    </div>
+</div>
+{% endblock %}

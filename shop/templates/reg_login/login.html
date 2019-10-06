@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Registration Form</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+
+        <link rel="stylesheet" href="{% static 'reg_login_CSS/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css' %}">
+
+
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{% static 'reg_login_CSS/css/style.css' %}">
+
+	</head>
+
+	<body>
+
+		<div class="wrapper" style="background-image : url(' {% static 'reg_login_CSS/images/two.jpg' %} '); ">
+
+			<div class="inner" style="border: 8px solid #333; border-radius: 50px 0 0 50px ">
+				<div class="image-holder">
+					<img src="{% static 'reg_login_CSS/images/three3.jpg' %}" alt="" style="border: 4px solid #333; border-radius:25px 0px 0px 25px" >
+				</div>
+				<form action="/login/" method="post">
+					<h3>Join Our WebSite</h3>
+
+					<div class="form-wrapper">
+						<input type="text" placeholder="Username" name="login_uname" class="form-control" required>
+						<i class="zmdi zmdi-account"></i>
+					</div>
+
+					<div class="form-wrapper">
+						<input type="password" placeholder="Password" name="login_pwd" class="form-control" required>
+						<i class="zmdi zmdi-lock"></i>
+					</div>
+
+<!--					<input type="submit" value="login">-->
+
+					<button type="submit" value="login">
+						Login
+						<i class="zmdi zmdi-arrow-right"></i>
+					</button>
+					<div style="color:red;">
+
+					{% if msg %}
+
+					<h4>
+						<ul>
+							{% for message in msg %}
+							<li>
+								{{ message }}
+							</li>
+							{% endfor %}
+						</ul>
+					</h4>
+					</div>
+
+					{% endif %}
+
+					{% csrf_token %}
+				</form>
+			</div>
+		</div>
+
+	</body>
+</html>

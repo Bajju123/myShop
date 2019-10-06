@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Registration Form</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+
+        <link rel="stylesheet" href="{% static 'reg_login_CSS/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css' %}">
+
+
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{% static 'reg_login_CSS/css/style.css' %}">
+
+		<script src="{% static 'reg_login_CSS/Js/reg.js' %}"></script>
+
+	</head>
+
+	<body>
+
+		<div class="wrapper" style="background-image : url(' {% static 'reg_login_CSS/images/two.jpg' %} ');">
+
+			<div class="inner">
+				<div class="image-holder" >
+					<div style="background-image : url(' {% static 'reg_login_CSS/images/three.jpg' %} ');background-repeat: no-repeat; background-size: 425px 590px; width:425px; height:590px;">
+<!--							<img src="{% static 'reg_login_CSS/images/three.jpg' %}" alt="">-->
+						<div style="padding:8%;">
+
+							<div style="padding:10%; background-color: rgba(255, 255, 255, 0.6);color:red; height:520px;">
+								<div style="margin-top:50%;">
+									{% if msg %}
+
+											<h4>
+										<ul>
+											{% for message in msg %}
+											<li>
+												{{ message }}
+											</li>
+											{% endfor %}
+										</ul>
+												</h4>
+
+									{% endif %}
+									</div>
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+
+
+				<form action="/register/" method="post">
+
+
+
+					<h3>Join Our WebSite</h3>
+					<div class="form-group">
+						<input type="text" placeholder="First Name"  class="form-control" name="fname" required>
+						<input type="text" placeholder="Last Name"  class="form-control" name="lname" required>
+					</div>
+					<div class="form-wrapper">
+						<input type="text" placeholder="Username" class="form-control" name="uname">
+						<i class="zmdi zmdi-account"></i>
+					</div>
+					<div class="form-wrapper">
+						<input type="number" placeholder="Contact No" name="contact" class="form-control">
+						<i class="zmdi zmdi-phone-in-talk"></i>
+					</div>
+					<div class="form-wrapper">
+						<input type="email"  placeholder="Email Address" name="email" class="form-control">
+						<i class="zmdi zmdi-email"></i>
+					</div>
+					<div class="form-wrapper">
+						<select class="form-control" name="gender">
+							<option value="" disabled selected>Gender</option>
+							<option value="male">Male</option>
+							<option value="femal">Female</option>
+							<option value="other">Other</option>
+						</select>
+						<i class="zmdi zmdi-caret-down" style="font-size: 17px"></i>
+					</div>
+					<div class="form-wrapper">
+						<input type="password" name="pwd1" placeholder="Password" class="form-control">
+						<i class="zmdi zmdi-lock"></i>
+					</div>
+					<div class="form-wrapper">
+						<input type="password" name="pwd2" placeholder="Confirm Password" class="form-control">
+						<i class="zmdi zmdi-lock"></i>
+					</div>
+
+<!--					<input type="submit" value="Register">-->
+
+					<button type="submit" value="Register">
+						Register
+						<i class="zmdi zmdi-arrow-right"></i>
+					</button>
+
+					{% csrf_token %}
+
+				</form>
+			</div>
+		</div>
+
+	</body>
+</html>

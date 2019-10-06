@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block title %}
+    {% if category %}{{ category.name }}{% else %}Products{% endif %}
+{% endblock %}
+
+{% block content %}
+
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 15px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+
+
+.contact-form{
+    background: #fff;
+    margin-top: 2%;
+    width: 100%;
+}
+.contact-form .form-control{
+    border-radius:1rem;
+}
+.contact-image{
+    text-align: center;
+}
+.contact-image img{
+    border-radius: 6rem;
+    width: 11%;
+    margin-top: -3%;
+    transform: rotate(29deg);
+}
+.contact-form form{
+    padding: 8%;
+}
+
+.contact-form h3{
+    margin-bottom: 3%;
+    margin-top: -10%;
+    text-align: center;
+    color: #0062cc;
+}
+.contact-form .btnContact {
+    width: 50%;
+    border: none;
+    border-radius: 1rem;
+    padding: 1.5%;
+    background: #f07e2b;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+}
+.btnContactSubmit
+{
+    width: 50%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    color: #fff;
+    background-color: #f07e2b;
+    border: none;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+<div class="row my-3">
+    <div class="col-lg-12" style="border-radius:0 50px; background-color: #DCC7AA">
+        <b><h1 class="text-center py-1" style="font-size:40pt; color:white; font-family: 'Times New Roman', Times, serif; letter-spacing: 5px;">Contact Us</h1></b>
+
+    </div>
+
+</div>
+
+<div class="row" style="  background: linear-gradient(to bottom, #99ccff 0%, #669999 100%); padding:5%; margin-top:3%;">
+    <div class="col-lg-12" style="text-align:center">
+        <b><h1>Get in touch</h1>
+        <h4>Want to get in touch? We'd love to hear from you. Here's how you can reach us...</h4></b>
+    </div>
+</div>
+<div class="row" style="margin-top:-50px;">
+    <div class="col-lg-4">
+        <div style="text-align:center; padding-top:25px; border-radius:100% 0; height:100px; width:100px; background-color:#99ccff; color:white;">
+            <h1><i class="zmdi zmdi-phone"></i></h1>
+        </div>
+
+        <div class="col-lg-12" style="background-color:#99ccff; padding:30px;">
+            <h3>Talk to Sales</h3>
+            <p>Interested in Furniture? Just pick up the phone to chat with a member of our sales team.</p>
+            <h3> +91 98765 43210 </h3>
+        </div>
+    </div>
+
+    <div class="col-lg-4" >
+        <div style="text-align:center; padding-top:25px; border-radius:100% 0; height:100px; width:100px; background-color:#99ccff; color:white;">
+            <h1><i class="zmdi zmdi-email"></i></h1>
+        </div>
+        <div class="col-lg-12" style="background-color:#99ccff; padding:30px;">
+            <h3>Mail Us</h3>
+            <p>Mail us if you have any query or information related our company, work, and packages.</p>
+            <h5> smithsuthar0@gmail.com </h5>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div style="text-align:center; padding-top:25px; border-radius:100% 0; height:100px; width:100px; background-color:#99ccff; color:white;">
+            <h1><i class="zmdi zmdi-pin"></i></h1>
+        </div>
+        <div class="col-lg-12" style="background-color:#99ccff; padding:30px;">
+            <h3>Address</h3>
+            <p>D-49 Prangan Soc., Near MGM School, New Sama Road Vadodara, Guajarat, India, 3900024.</p>
+            <h3> +91 98765 43210 </h3>
+        </div>
+
+    </div>
+
+
+
+
+</div>
+<div class="row">
+    <div class="container contact-form">
+                <div class="contact-image">
+                    <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
+                </div>
+                <form method="post">
+                    {% csrf_token %}
+                    <h3 style="color:#f07e2b;">Drop Us a Message</h3>
+                   <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" name="txtName" class="form-control" placeholder="Your Name *" value="" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="txtEmail" class="form-control" placeholder="Your Email *" value="" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="txtPhone" class="form-control" placeholder="Your Phone Number *" value="" />
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" name="btnSubmit" class="btnContact" value="Send Message" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <textarea name="txtMsg" class="form-control" placeholder="Your Message *" style="width: 100%; height: 150px;"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+    </div>
+</div>
+
+<center> <h2 style="background-color:silver; padding:10px; border-radius:15px;color:white; letter-spacing: 3px;">"Meet The Team"</h2></center>
+<br>
+
+<div class="row col-lg-12">
+
+  <div class="column">
+    <div class="card">
+        <center>
+      <img src="{% static 'shop/meet/A6.jpg' %}" alt="Bajju" style="width:70%; padding:5px;">
+            </center>
+      <div class="container">
+        <h2>Bajrang S. Suthar</h2>
+        <p class="title">CEO & Founder</p>
+        <p>He is a CEO of the "The Furniture Shop". He starts his business at the age of 22.</p>
+        <p>bajrangsuthar4141@gmail.com</p>
+        <p><button class="button">8511148214</button></p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="column">
+    <div class="card">
+        <center>
+      <img src="{% static 'shop/meet/A6.jpg' %}" alt="John" style="width:70%; padding:5%;">
+        </center>
+      <div class="container">
+        <h2>Bajju Suthar</h2>
+        <p class="title">Designer</p>
+        <p>He is the Designer of all type of furniture in our company.</p>
+        <p>smithsuthar0@gmail.com</p>
+        <p><button class="button">7096941400</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+        <center>
+      <img src="{% static 'shop/meet/A6.jpg' %}" alt="John" style="width:70%; padding:5%;">
+        </center>
+      <div class="container">
+        <h2>Anil Suthar</h2>
+        <p class="title">Head of TFS</p>
+        <p>He is the Designer of all type of furniture in our company.</p>
+        <p>smithsuthar0@gmail.com</p>
+        <p><button class="button">7096941400</button></p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
+
+{% endblock %}
